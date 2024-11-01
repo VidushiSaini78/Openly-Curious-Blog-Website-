@@ -36,6 +36,7 @@ The **Openly Curious** blog website is built using the following technologies:
 - **[HTML5](https://www.w3.org/html/)**: The standard markup language for creating structured web pages.
 - **[CSS3](https://www.w3.org/Style/CSS/)**: A style sheet language used for styling and layout of web pages.
 - **[JavaScript](https://www.javascript.com/)**: A programming language that enables dynamic content and interactive features on web pages.
+- [Bootstrap](https://getbootstrap.com/) - A powerful front-end framework for developing responsive and mobile-first websites. It includes CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
 
 ### Backend
 - **[Flask](https://flask.palletsprojects.com/)**: A lightweight WSGI web application framework in Python, designed for quick and easy setup and development of web applications.
