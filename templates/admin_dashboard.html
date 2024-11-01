@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Admin Dashboard</h1>
+    
+    <div class="row mt-4">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card border-primary">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary">Total Users</h5>
+                    <p class="card-text display-4">{{ total_users }}</p>
+                    <i class="fas fa-users fa-3x text-primary"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card border-success">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-success">Total Posts Today</h5>
+                    <p class="card-text display-4">{{ total_posts_today }}</p>
+                    <i class="fas fa-pencil-alt fa-3x text-success"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mt-4 text-center">All Posts</h2>
+    <div class="post-list border border-secondary p-3 rounded">
+        {% if all_posts %}
+            {% for post in all_posts %}
+            <div class="border-bottom mb-3 pb-3">
+                <h5>{{ post.Blog_Title }}</h5>
+                <p><strong>Posted On:</strong> {{ post.Posted_On.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                <p>{{ post.Blog_Tagline }}</p>
+                <div class="d-flex justify-content-between">
+                    <a href="{{ url_for('view_post', post_id=post.S_No) }}" class="btn btn-info btn-sm">View</a>
+                    <form action="{{ url_for('delete_admin', s_no=post.S_No) }}" method="POST" style="display: inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-center">No posts available.</p>  <!-- Message if no posts exist -->
+        {% endif %}
+    </div>
+</div>
+
+<!-- FontAwesome for icons (add to your layout.html if not already included) -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+{% endblock %}

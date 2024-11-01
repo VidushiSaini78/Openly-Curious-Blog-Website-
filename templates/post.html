@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block body %}
+<header class="masthead" style="background-color: #deb6b6; padding: 40px 0;">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7 text-center">
+                <div class="post-heading">
+                    <h1>{{ post.Blog_Title }}</h1>
+                    <h2 class="subheading">{{ post.Blog_Tagline }}</h2>
+                    <span class="meta">
+                        Posted On {{ post.Posted_On }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content-->
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <!-- Display image below heading -->
+                {% set fname = "assets/img/" + post.Img_Url %}
+                <img src="{{ url_for('static', filename=fname) }}" alt="Blog Image" class="responsive-image">
+
+                <!-- Blog Content -->
+                <pre class="blog-content">
+                    <span class="first-letter">{{ post.Blog_Content[0] }}</span>{{ post.Blog_Content[1:] }}
+                </pre>
+            </div>
+        </div>
+    </div>
+</article>
+
+<style>
+.responsive-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.blog-content {
+    width: 100%; /* Matches the column width */
+    margin: 30px 0;
+    white-space: pre-wrap;
+    font-family: 'Aptos Body', sans-serif;
+    font-size: 1rem;
+    color: #222;
+    background-color: #d4779054;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #b0bec5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    overflow-x: auto;
+    text-align: justify;
+}
+
+.first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 0.8;
+    color: #a50000;
+    vertical-align: top;
+    position: relative;
+    top: 5px;
+}
+
+@media (max-width: 768px) {
+    .blog-content {
+        padding: 20px;
+        font-size: 0.95rem;
+    }
+
+    .first-letter {
+        font-size: 2.5rem;
+        margin-right: 8px;
+        top: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-content {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .first-letter {
+        font-size: 2rem;
+        margin-right: 6px;
+        top: 3px;
+    }
+}
+</style>
+
+{% endblock %}
