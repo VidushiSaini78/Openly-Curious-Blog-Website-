@@ -2,7 +2,7 @@
 
 Welcome to **Openly Curious**, a dynamic blog website that encourages open-minded discussions and curiosity-driven exploration of various topics. This platform aims to provide users with an engaging space to share thoughts, ideas, and insights.
 
-![Openly Curious Banner](https://example.com/banner-image.png) <!-- Replace with your actual image URL -->
+<!--![Openly Curious Banner](https://example.com/banner-image.png)--> <!-- Replace with your actual image URL -->
 
 ---
 
@@ -27,7 +27,7 @@ Welcome to **Openly Curious**, a dynamic blog website that encourages open-minde
 - **Admin Dashboard**: Admins can view all posts and manage user content.
 - **Post Management**: Admins have the authority to delete inappropriate posts to maintain community standards.
 
-![User Features]("C:\Users\vidus\OneDrive\Pictures\Screenshots\Screenshot 2024-11-02 021255.png") <!-- Replace with your actual image URL -->
+<!--![User Features] <!-- ("C:\Users\vidus\OneDrive\Pictures\Screenshots\Screenshot 2024-11-02 021255.png")--> <!-- Replace with your actual image URL -->
 
 ---
 
