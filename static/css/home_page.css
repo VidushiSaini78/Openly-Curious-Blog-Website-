@@ -1,0 +1,294 @@
+* {
+    margin: 0p;
+    padding: 0px;
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    /* Ensure there is no margin  [Added this here bcoz browser is adding default margin]*/
+    padding: 0;
+    /* Ensure there is no padding */
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    background-color: #9B7984;
+    display: flex;
+    /*Here parent is main and we need all the 3 childern to be arrange in one line*/
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* Space between logo and nav items */
+    align-items: center;
+    /* Align items vertically */
+    padding: 10px 20px;
+    /* Add padding to navbar */
+    background-color: transparent;
+    /* Make background transparent if needed */
+    position: fixed;
+    /* Fix it at the top */
+    width: 100%;
+    /* Ensure it takes full width */
+    top: 0;
+    /* Align it to the top */
+    z-index: 1000;
+    /* Make sure it stays above other content */
+}
+
+.navbar h1 {
+    color: white;
+}
+
+.navbar img.logo {
+    height: 200px;
+    top: 0%;
+    margin: 0%;
+    background-color: black;
+    /* Adjust logo height as needed */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* Display items in a row */
+}
+
+.navbar li {
+    margin: 0 15px;
+    /* Space between menu items */
+}
+
+.navbar a {
+    font-size: 25px;
+    color: white;
+    /* Font color set to white */
+    text-decoration: none;
+    padding: 8px 16px;
+    /* Space around text */
+    font-weight: bold;
+    /* Font set to bold */
+    position: relative;
+    transition: color 0.3s, border-bottom 0.3s;
+    /* Smooth color and border change */
+}
+
+.navbar a:hover::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    /* Thickness of the line */
+    background-color: white;
+    /* Color of the line */
+    transition: width 0.3s;
+    width: 100%;
+    /* Full width on hover */
+}
+
+.login-btn {
+    --color: hsl(0, 0%, 100%);
+    --color2: rgb(10, 25, 30);
+    padding: 0.6em 1.75em;
+    background-color: transparent;
+    border-radius: 6px;
+    border: .3px solid var(--color);
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 15px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    color: var(--color);
+}
+
+.logn-btn::after,
+.login-btn::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: var(--color);
+}
+
+.login-btn::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.login-btn:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.login-btn:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+}
+
+.login-btn:hover {
+    color: var(--color2);
+}
+
+.login-btn:active {
+    filter: brightness(.7);
+    transform: scale(.98);
+}
+
+.part2 {
+    height: 100%;
+    width: 67%;
+    background-color: blue;
+    background-image: url('../assets/img/poster_img1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(73, 16, 73, 0.396);
+}
+
+.part3 {
+    height: 100%;
+    width: 8%;
+    /* background-color: greenyellow; */
+}
+
+.text {
+    height: 300px;
+    position: absolute;
+    width: 400px;
+    left: 7%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.text h1 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 28px;
+    color: white;
+    letter-spacing: 3px;
+    opacity: 0;
+    /* Initially invisible */
+    animation: fadeInOut 8s infinite;
+    /* 8-second cycle, loops infinitely */
+}
+
+.text h1:nth-child(1) {
+    animation-delay: 0s;
+    /* First element starts right away */
+}
+
+.text h1:nth-child(2) {
+    animation-delay: 1s;
+    /* Second element starts after 2 seconds */
+}
+
+.text h1:nth-child(3) {
+    animation-delay: 2s;
+    /* Third element starts after 4 seconds */
+}
+
+.text h1:nth-child(4) {
+    animation-delay: 3s;
+    /* Fourth element starts after 6 seconds */
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        /* Invisible at start */
+        transform: translateY(20px);
+        /* Optional: Start slightly lower */
+    }
+
+    20% {
+        opacity: 1;
+        /* Fully visible */
+        transform: translateY(0);
+        /* Optional: Move to the correct position */
+    }
+
+    40% {
+        opacity: 1;
+        /* Stay visible */
+        transform: translateY(0);
+    }
+
+    60% {
+        opacity: 0;
+        /* Start fading out */
+        transform: translateY(-20px);
+        /* Optional: Move slightly upwards */
+    }
+
+    100% {
+        opacity: 0;
+        /* Fully invisible */
+    }
+}
+
+.part4 {
+    height: 600px;
+    width: 500px;
+    /* background-color: red; */
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(0, -50%);
+    background-image: url('../assets/img/poster_img2.jpg');
+    background-size: cover;
+    border: 5px solid white;
+    border-radius: 50px;
+    /* background-position: center; */
+}
+
+.overlay1 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(73, 16, 73, 0.396);
+    border-radius: 50px;
+}
+
+.vertical_text {
+    position: absolute;
+    transform: rotate(90deg);
+    right: -40%;
+    top: -6%;
+    transform-origin: 0%;
+}
+
+.vertical_text h1 {
+    font-size: 80px;
+    font-weight: 900px;
+    font-family: 'Rubik', sans-serif;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 2px;
+    color: transparent;
+    letter-spacing: 5px;
+    ;
+}
